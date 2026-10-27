@@ -12,7 +12,7 @@ ApplicationWindow {
     minimumHeight: 640
     visible: true
     title: "Omarchy Calendar"
-    color: theme.backgroundDeep
+    color: Qt.darker(theme.backgroundDeep, 1.35)
     font.family: "Inter"
     font.pixelSize: theme.baseFontSize
 
@@ -369,7 +369,7 @@ ApplicationWindow {
     Shortcut { sequence: "Escape"; enabled: window.currentView === "search" || window.currentView === "settings"; onActivated: window.currentView = "week" }
 
     Rectangle {
-        anchors { fill: parent; margins: 12 }
+        anchors { fill: parent; margins: 0 }
         radius: 16
         color: theme.background
         border.width: 1
