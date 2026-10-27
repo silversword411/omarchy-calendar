@@ -8,8 +8,8 @@ Item {
     Accessible.description: "Use arrow keys to move between days and events. Press Enter for details."
     property var weekStart: new Date()
     property date currentTime: new Date()
-    property int startHour: 7
-    property int endHour: 20
+    property int startHour: 0
+    property int endHour: 24
     property real hourHeight: 70
     property var weekEvents: []
     property var hiddenCalendarIds: []
