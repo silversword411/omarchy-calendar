@@ -398,8 +398,8 @@ ApplicationWindow {
                         Layout.preferredWidth: 185
                     }
 
-                    CalendarButton { text: "‹"; accessibleName: "Previous period"; visible: ["day", "week", "month"].indexOf(window.currentView) >= 0; Layout.preferredWidth: visible ? 36 : 0; onClicked: window.navigatePrevious() }
-                    CalendarButton { text: "›"; accessibleName: "Next period"; visible: ["day", "week", "month"].indexOf(window.currentView) >= 0; Layout.preferredWidth: visible ? 36 : 0; onClicked: window.navigateNext() }
+                    CalendarButton { icon.source: "qrc:/qml/icons/chevron-left.svg"; accessibleName: "Previous period"; visible: ["day", "week", "month"].indexOf(window.currentView) >= 0; Layout.preferredWidth: visible ? 36 : 0; onClicked: window.navigatePrevious() }
+                    CalendarButton { icon.source: "qrc:/qml/icons/chevron-right.svg"; accessibleName: "Next period"; visible: ["day", "week", "month"].indexOf(window.currentView) >= 0; Layout.preferredWidth: visible ? 36 : 0; onClicked: window.navigateNext() }
                     CalendarButton { text: "Today"; visible: window.currentView !== "search" && window.currentView !== "settings" && window.currentView !== "onboarding"; onClicked: window.goToday() }
 
                     Text {
@@ -434,8 +434,8 @@ ApplicationWindow {
                         }
                     }
 
-                    CalendarButton { visible: window.currentView !== "onboarding"; text: "⌕"; accessibleName: "Search calendar"; Layout.preferredWidth: visible ? 38 : 0; selected: window.currentView === "search"; onClicked: window.currentView = "search" }
-                    CalendarButton { visible: window.currentView !== "onboarding"; text: "?"; accessibleName: "Keyboard shortcuts"; Layout.preferredWidth: visible ? 38 : 0; onClicked: shortcutHelp.open() }
+                    CalendarButton { visible: window.currentView !== "onboarding"; icon.source: "qrc:/qml/icons/search.svg"; accessibleName: "Search calendar"; Layout.preferredWidth: visible ? 38 : 0; selected: window.currentView === "search"; onClicked: window.currentView = "search" }
+                    CalendarButton { visible: window.currentView !== "onboarding"; icon.source: "qrc:/qml/icons/help.svg"; accessibleName: "Keyboard shortcuts"; Layout.preferredWidth: visible ? 38 : 0; onClicked: shortcutHelp.open() }
                     CalendarButton { visible: window.currentView !== "onboarding"; text: "Quick add"; onClicked: quickEntryPopup.openForEntry() }
                     CalendarButton { visible: window.currentView !== "onboarding"; text: "+  New event"; accentColor: theme.accent; selected: true; onClicked: window.openEventEditor() }
                 }
@@ -465,10 +465,10 @@ ApplicationWindow {
                         Column {
                             width: parent.width
                             spacing: 4
-                            CalendarButton { width: parent.width; text: "▦   Calendar"; selected: ["day", "week", "month"].indexOf(window.currentView) >= 0; onClicked: window.currentView = "week" }
-                            CalendarButton { width: parent.width; text: "≡   Agenda"; selected: window.currentView === "agenda"; onClicked: window.currentView = "agenda" }
-                            CalendarButton { width: parent.width; text: "⌕   Search"; selected: window.currentView === "search"; onClicked: window.currentView = "search" }
-                            CalendarButton { width: parent.width; text: "⚙   Settings"; selected: window.currentView === "settings"; onClicked: window.currentView = "settings" }
+                            CalendarButton { width: parent.width; icon.source: "qrc:/qml/icons/calendar.svg"; text: "Calendar"; selected: ["day", "week", "month"].indexOf(window.currentView) >= 0; onClicked: window.currentView = "week" }
+                            CalendarButton { width: parent.width; icon.source: "qrc:/qml/icons/agenda.svg"; text: "Agenda"; selected: window.currentView === "agenda"; onClicked: window.currentView = "agenda" }
+                            CalendarButton { width: parent.width; icon.source: "qrc:/qml/icons/search.svg"; text: "Search"; selected: window.currentView === "search"; onClicked: window.currentView = "search" }
+                            CalendarButton { width: parent.width; icon.source: "qrc:/qml/icons/settings.svg"; text: "Settings"; selected: window.currentView === "settings"; onClicked: window.currentView = "settings" }
                         }
 
                         Rectangle { width: parent.width; height: 1; color: Qt.rgba(theme.foreground.r, theme.foreground.g, theme.foreground.b, 0.09) }

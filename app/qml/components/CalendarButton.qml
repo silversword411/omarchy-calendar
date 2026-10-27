@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.impl
 
 Button {
     id: control
@@ -18,13 +19,20 @@ Button {
     rightPadding: preferences.interfaceDensity === "compact" ? 9 : 12
     hoverEnabled: true
 
-    contentItem: Text {
+    icon.width: 16
+    icon.height: 16
+    icon.color: control.selected ? theme.foreground : theme.foregroundMuted
+    spacing: 10
+
+    contentItem: IconLabel {
+        spacing: control.spacing
+        mirrored: control.mirrored
+        display: control.display
+        icon: control.icon
         text: control.text
-        color: control.selected ? theme.foreground : theme.foregroundMuted
         font.pixelSize: theme.baseFontSize
         font.weight: control.selected ? Font.DemiBold : Font.Medium
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
+        color: control.selected ? theme.foreground : theme.foregroundMuted
     }
 
     background: Rectangle {

@@ -13,5 +13,12 @@
         <file alias="views/SearchView.qml">../qml/views/SearchView.qml</file>
         <file alias="views/SettingsView.qml">../qml/views/SettingsView.qml</file>
         <file alias="views/OnboardingView.qml">../qml/views/OnboardingView.qml</file>
+        <file alias="icons/search.svg">icons/search.svg</file>
+        <file alias="icons/help.svg">icons/help.svg</file>
+        <file alias="icons/chevron-left.svg">icons/chevron-left.svg</file>
+        <file alias="icons/chevron-right.svg">icons/chevron-right.svg</file>
+        <file alias="icons/calendar.svg">icons/calendar.svg</file>
+        <file alias="icons/agenda.svg">icons/agenda.svg</file>
+        <file alias="icons/settings.svg">icons/settings.svg</file>
     </qresource>
 </RCC>
